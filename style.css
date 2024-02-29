@@ -1,10 +1,5 @@
 html{
-    background-color: rgb(30, 30, 30);
     font-family: Consolas;
-}
-
-html label{
-    color: white;
 }
 
 button{
@@ -25,6 +20,22 @@ div{
     padding: 0;
 }
 
+.darkTheme{
+    background-color: rgb(30, 30, 30);
+}
+
+.darkTheme label{
+    color: white;
+}
+
+.lightTheme{
+    background-color: rgb(255, 255, 255);
+}
+
+.lightTheme label{
+    color: black;
+}
+
 .container{
     margin: auto;
 }
@@ -35,6 +46,14 @@ div{
 
 .brightRedSection{
     background-color: rgb(255, 79, 79);
+    padding: 5px;
+    margin: 5px;
+    width: fit-content;
+    border-radius: 2px;
+}
+
+.darkRedSection{
+    background-color: rgb(129, 12, 12);
     padding: 5px;
     margin: 5px;
     width: fit-content;

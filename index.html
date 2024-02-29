@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="site">
+<html lang="en" id="site" class="darkTheme">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,10 +11,12 @@
     <header>
       <h1>Página CRUDL</h1>
       <div class="headerMenu">
-        <button>Tema claro</button>
+        <button id="lightTheme">Tema claro</button>
+        <button id="darkTheme">Tema escuro</button>
       </div>
     </header>
     <form onsubmit="addCourse()" class="container">
+      <div class="darkRedSection">
       <div class="brightRedSection">
         <label for="CourseName">Nome do curso:</label>
         <input type="text" id="CourseName" /><br />
@@ -48,6 +50,7 @@
       </div>
 
       <button type="submit">Adicionar</button>
+    </div>
     </form>
     <div id="list" class="brightRedSection">
       <div class="label">Cursos:</div>
