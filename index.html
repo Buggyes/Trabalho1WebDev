@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="site">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,29 +14,43 @@
         <button>Tema claro</button>
       </div>
     </header>
-    <form onsubmit="" class="container">
+    <form onsubmit="addCourse()" class="container">
       <div class="brightRedSection">
-      <label for="CourseName">Nome do curso:</label>
-      <input type="text" id="CourseName" /><br>
+        <label for="CourseName">Nome do curso:</label>
+        <input type="text" id="CourseName" /><br />
 
-      <label for="CourseTime">Carga horária (em horas):</label>
-      <input type="number" id="CourseTime" /><br>
+        <label for="CourseTime">Carga horária (em horas):</label>
+        <input type="number" id="CourseTime" /><br />
 
-      <label for="CourseInstructor">Nome do instrutor:</label>
-      <input type="text" id="CourseIntructor" /><br>
+        <label for="CourseInstructor">Nome do instrutor:</label>
+        <input type="text" id="CourseInstructor" /><br />
       </div>
 
       <div id="CourseTeaching" class="brightRedSection">
-        <label for="CourseTeaching">Nível de educação do curso:</label><br>
-        <input type="radio" id="Tecnologo" name="education"/><label>Tecnólogo</label><br>
-        <input type="radio" id="Profissionalizante" name="education"/><label>Profissionalizante</label><br>
-        <input type="radio" id="Ensino superior" name="education"/><label>Ensino superior</label><br>
+        <div class="label">Nível de educação do curso:</div>
+        <div class="label">
+          <input type="radio" id="Tecnologo" name="education" />Tecnólogo
+        </div>
+        <br />
+        <div class="label">
+          <input
+            type="radio"
+            id="Profissionalizante"
+            name="education"
+          />Profissionalizante
+        </div>
+        <br />
+        <div class="label">
+          <input type="radio" id="EnsinoSuperior" name="education" />Ensino
+          superior
+        </div>
+        <br />
       </div>
 
       <button type="submit">Adicionar</button>
     </form>
     <div id="list" class="brightRedSection">
-      <label>Cursos:</label>
+      <div class="label">Cursos:</div>
     </div>
   </body>
 </html>
