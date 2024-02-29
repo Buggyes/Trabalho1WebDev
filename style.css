@@ -20,6 +20,11 @@ div{
     padding: 0;
 }
 
+.darkButton{
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
 .darkTheme{
     background-color: rgb(30, 30, 30);
 }

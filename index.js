@@ -1,16 +1,22 @@
 var courses = [];
 
-document.getElementById("lightTheme").addEventListener("click",switchLightTheme);
-document.getElementById("darkTheme").addEventListener("click",switchDarkTheme);
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .getElementById("lightTheme")
+    .addEventListener("click", switchLightTheme);
+  document
+    .getElementById("darkTheme")
+    .addEventListener("click", switchDarkTheme);
+});
 
 function addCourse() {
-    console.log('Enviado');
+  console.log("Enviado");
 }
 
-function switchLightTheme(){
-    document.getElementById('site').className = 'lightTheme';
+function switchLightTheme() {
+  document.getElementById("site").className = "lightTheme";
 }
 
-function switchDarkTheme(){
-    document.getElementById('site').className = 'darkTheme';
+function switchDarkTheme() {
+  document.getElementById("site").className = "darkTheme";
 }
