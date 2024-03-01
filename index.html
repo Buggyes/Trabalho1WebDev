@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" id="site" class="darkTheme">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tela de Início</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="index.js"></script>
-  </head>
-  <body>
-    <header>
-      <h1>Página CRUDL</h1>
-      <div class="headerMenu">
-        <button id="lightTheme">Tema claro</button>
-        <button id="darkTheme" class="darkButton">Tema escuro</button>
-      </div>
-    </header>
-    <form onsubmit="addCourse()" class="container">
-      <div class="darkRedSection">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tela de Início</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Página CRUDL</h1>
+    <div class="headerMenu">
+      <button id="lightTheme">Tema claro</button>
+      <button id="darkTheme" class="darkButton">Tema escuro</button>
+    </div>
+  </header>
+  <form onsubmit="addCourse()" class="container" id="addCourseForm">
+    <div class="darkRedSection">
       <div class="brightRedSection">
         <label for="CourseName">Nome do curso:</label>
         <input type="text" id="CourseName" /><br />
@@ -35,11 +37,7 @@
         </div>
         <br />
         <div class="label">
-          <input
-            type="radio"
-            id="Profissionalizante"
-            name="education"
-          />Profissionalizante
+          <input type="radio" id="Profissionalizante" name="education" />Profissionalizante
         </div>
         <br />
         <div class="label">
@@ -51,9 +49,10 @@
 
       <button type="submit">Adicionar</button>
     </div>
-    </form>
-    <div id="list" class="brightRedSection">
-      <div class="label">Cursos:</div>
-    </div>
-  </body>
+  </form>
+  <div id="list" class="brightRedSection">
+    <div class="label">Cursos:</div>
+  </div>
+</body>
+
 </html>

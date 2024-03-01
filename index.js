@@ -1,5 +1,14 @@
 var courses = [];
 
+class Course{
+  constructor(name, workload, instructorName, educationLvl){
+    this.name = name;
+    this.workload = workload;
+    this.instructorName = instructorName;
+    this.educationLvl = educationLvl;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("lightTheme")
@@ -10,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function addCourse() {
-  console.log("Enviado");
+  
 }
 
 function switchLightTheme() {
