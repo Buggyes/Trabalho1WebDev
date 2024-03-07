@@ -11,15 +11,15 @@
   <body>
     <header>
       <h1>Página CRUDL</h1>
-      <div class="headerMenu">
+      <section class="headerMenu">
         <button id="lightTheme">Tema claro</button>
         <button id="darkTheme" class="darkButton">Tema escuro</button>
-      </div>
+      </section>
     </header>
 
     <form onsubmit="addCourse()" class="container" id="addCourseForm">
-      <div class="darkRedSection">
-        <div class="brightRedSection">
+      <section class="darkRedSection">
+        <section class="brightRedSection">
           <label for="CourseName">Nome do curso:</label>
           <input type="text" id="CourseName" /><br />
 
@@ -28,35 +28,35 @@
 
           <label for="CourseInstructor">Nome do instrutor:</label>
           <input type="text" id="CourseInstructor" /><br />
-        </div>
+        </section>
 
-        <div id="CourseTeaching" class="brightRedSection">
-          <div class="label">Nível de educação do curso:</div>
-          <div class="label">
+        <section id="CourseTeaching" class="brightRedSection">
+          <article class="label">Nível de educação do curso:</article>
+          <article class="label">
             <input type="radio" id="Tecnologo" name="education" />Tecnólogo
-          </div>
+          </article>
           <br />
-          <div class="label">
+          <article class="label">
             <input
               type="radio"
               id="Profissionalizante"
               name="education"
             />Profissionalizante
-          </div>
+          </article>
           <br />
-          <div class="label">
+          <article class="label">
             <input type="radio" id="EnsinoSuperior" name="education" />Ensino
             superior
-          </div>
+          </article>
           <br />
-        </div>
+        </section>
 
         <button type="submit">Adicionar</button>
-      </div>
+      </section>
     </form>
 
-    <div id="courseList" class="brightRedSection">
-      <div class="label">Cursos:</div>
+    <section id="courseList" class="brightRedSection">
+      <article class="label">Cursos:</article>
       <table id="courseTable" class="courseTable">
         <tr>
           <th>Id</th>
@@ -67,6 +67,10 @@
           <th>Opções</th>
         </tr>
       </table>
-    </div>
+    </section>
+    
+    <footer id="rodape">
+
+    </footer>
   </body>
 </html>
