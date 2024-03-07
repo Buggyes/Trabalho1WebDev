@@ -30,7 +30,7 @@ function getCourses() {
   let table = document.getElementById("courseTable");
   courseCount = Number(localStorage.getItem("courseCount"));
   for (let i = 1; i <= courseCount; i++) {
-    
+
     if(localStorage.getItem("courseName"+i) == null){
       continue;
     }
@@ -77,6 +77,8 @@ function getCourses() {
       localStorage.setItem("courseCount", courseCount);
 
       window.alert("Curso de " + name + " deletado com sucesso!");
+
+      location.reload();
     });
 
     courseId.appendChild(courseIdText);
