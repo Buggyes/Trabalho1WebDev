@@ -43,9 +43,7 @@ function getCourses() {
 
     tray = document.createElement("tr");
     tray.id = i;
-
-    let courseId = document.createElement("td");
-    let courseIdText = document.createTextNode(i);
+    
     let courseName = document.createElement("td");
     let courseNameText = document.createTextNode(localStorage.getItem("courseName" + i));
     let courseTime = document.createElement("td");
@@ -81,7 +79,6 @@ function getCourses() {
       location.reload();
     });
 
-    courseId.appendChild(courseIdText);
     courseName.appendChild(courseNameText);
     courseTime.appendChild(courseTimeText);
     courseInstructor.appendChild(courseInstructorText);
@@ -92,7 +89,6 @@ function getCourses() {
     courseOptions.appendChild(courseEdit);
     courseOptions.appendChild(courseDelete);
 
-    tray.appendChild(courseId);
     tray.appendChild(courseName);
     tray.appendChild(courseTime);
     tray.appendChild(courseInstructor);
