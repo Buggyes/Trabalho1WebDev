@@ -1,5 +1,20 @@
 var courseCount = 0;
 
+class Course{
+  id;
+  name;
+  time;
+  instructor;
+  education;
+  Course(id, name, time, instructor, education){
+    this.id = id;
+    this.name = name;
+    this.time = time;
+    this.instructor = instructor;
+    this.education = education;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("lightTheme")
@@ -15,6 +30,11 @@ function getCourses() {
   let table = document.getElementById("courseTable");
   courseCount = Number(localStorage.getItem("courseCount"));
   for (let i = 1; i <= courseCount; i++) {
+    
+    if(localStorage.getItem("courseName"+i) == null){
+      continue;
+    }
+
     console.log(i);
     console.log(localStorage.getItem("courseName" + i));
     console.log(localStorage.getItem("courseTime" + i));
@@ -22,6 +42,7 @@ function getCourses() {
     console.log(localStorage.getItem("courseEducation" + i));
 
     tray = document.createElement("tr");
+    tray.id = i;
 
     let courseId = document.createElement("td");
     let courseIdText = document.createTextNode(i);
@@ -38,7 +59,26 @@ function getCourses() {
     let courseEditText = document.createTextNode("Editar");
     let courseDelete = document.createElement("button");
     let courseDeleteText = document.createTextNode("Deletar");
-    
+
+    courseEdit.addEventListener('click', () => {
+
+    });
+
+    courseDelete.addEventListener('click', () => {
+      let tray = document.getElementById(i);
+      tray.remove();
+
+      let name = localStorage.getItem("courseName" + i);
+      localStorage.removeItem("courseName" + i);
+      localStorage.removeItem("courseTime" + i);
+      localStorage.removeItem("courseInstructor" + i);
+      localStorage.removeItem("courseEducation" + i);
+
+      localStorage.setItem("courseCount", courseCount);
+
+      window.alert("Curso de " + name + " deletado com sucesso!");
+    });
+
     courseId.appendChild(courseIdText);
     courseName.appendChild(courseNameText);
     courseTime.appendChild(courseTimeText);
@@ -56,8 +96,6 @@ function getCourses() {
     tray.appendChild(courseInstructor);
     tray.appendChild(courseEducation);
     tray.appendChild(courseOptions);
-
-    tray.id = i;
 
     table.appendChild(tray);
   }
@@ -90,10 +128,10 @@ function addCourse() {
 
 function getLastSessionTheme() {
   let currentTheme = localStorage.getItem("siteTheme");
-  if(currentTheme == 1){
+  if (currentTheme == 1) {
     switchLightTheme();
   }
-  else{
+  else {
     switchDarkTheme();
   }
 }
