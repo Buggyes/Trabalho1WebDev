@@ -1,14 +1,4 @@
-var courses = [];
 var courseCount = 0;
-
-class Course {
-  constructor(name, workload, instructorName, educationLvl) {
-    this.name = name;
-    this.workload = workload;
-    this.instructorName = instructorName;
-    this.educationLvl = educationLvl;
-  }
-}
 
 document.addEventListener("DOMContentLoaded", function () {
   document
@@ -18,15 +8,58 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("darkTheme")
     .addEventListener("click", switchDarkTheme);
   getCourses();
+  getLastSessionTheme();
 });
 
 function getCourses() {
+  let table = document.getElementById("courseTable");
   courseCount = Number(localStorage.getItem("courseCount"));
   for (let i = 1; i <= courseCount; i++) {
+    console.log(i);
     console.log(localStorage.getItem("courseName" + i));
     console.log(localStorage.getItem("courseTime" + i));
     console.log(localStorage.getItem("courseInstructor" + i));
     console.log(localStorage.getItem("courseEducation" + i));
+
+    tray = document.createElement("tr");
+
+    let courseId = document.createElement("td");
+    let courseIdText = document.createTextNode(i);
+    let courseName = document.createElement("td");
+    let courseNameText = document.createTextNode(localStorage.getItem("courseName" + i));
+    let courseTime = document.createElement("td");
+    let courseTimeText = document.createTextNode(localStorage.getItem("courseTime" + i));
+    let courseInstructor = document.createElement("td");
+    let courseInstructorText = document.createTextNode(localStorage.getItem("courseInstructor" + i));
+    let courseEducation = document.createElement("td");
+    let courseEducationText = document.createTextNode(localStorage.getItem("courseEducation" + i));
+    let courseOptions = document.createElement("td");
+    let courseEdit = document.createElement("button");
+    let courseEditText = document.createTextNode("Editar");
+    let courseDelete = document.createElement("button");
+    let courseDeleteText = document.createTextNode("Deletar");
+    
+    courseId.appendChild(courseIdText);
+    courseName.appendChild(courseNameText);
+    courseTime.appendChild(courseTimeText);
+    courseInstructor.appendChild(courseInstructorText);
+    courseEducation.appendChild(courseEducationText);
+    courseEdit.appendChild(courseEditText);
+    courseDelete.appendChild(courseDeleteText);
+
+    courseOptions.appendChild(courseEdit);
+    courseOptions.appendChild(courseDelete);
+
+    tray.appendChild(courseId);
+    tray.appendChild(courseName);
+    tray.appendChild(courseTime);
+    tray.appendChild(courseInstructor);
+    tray.appendChild(courseEducation);
+    tray.appendChild(courseOptions);
+
+    tray.id = i;
+
+    table.appendChild(tray);
   }
 }
 
@@ -56,8 +89,8 @@ function addCourse() {
 }
 
 function getLastSessionTheme() {
-  let currentTheme = Boolean(localStorage.getItem("siteTheme"));
-  if(currentTheme){
+  let currentTheme = localStorage.getItem("siteTheme");
+  if(currentTheme == 1){
     switchLightTheme();
   }
   else{
@@ -67,10 +100,10 @@ function getLastSessionTheme() {
 
 function switchLightTheme() {
   document.getElementById("site").className = "lightTheme";
-  localStorage.setItem("siteTheme", true);
+  localStorage.setItem("siteTheme", 1);
 }
 
 function switchDarkTheme() {
   document.getElementById("site").className = "darkTheme";
-  localStorage.setItem("siteTheme", false);
+  localStorage.setItem("siteTheme", 0);
 }

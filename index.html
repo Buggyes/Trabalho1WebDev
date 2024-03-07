@@ -1,61 +1,72 @@
 <!DOCTYPE html>
 <html lang="en" id="site" class="darkTheme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de Início</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tela de Início</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="index.js"></script>
-</head>
-
-<body>
-  <header>
-    <h1>Página CRUDL</h1>
-    <div class="headerMenu">
-      <button id="lightTheme">Tema claro</button>
-      <button id="darkTheme" class="darkButton">Tema escuro</button>
-    </div>
-  </header>
-
-  <form onsubmit="addCourse()" class="container" id="addCourseForm">
-    <div class="darkRedSection">
-      <div class="brightRedSection">
-        <label for="CourseName">Nome do curso:</label>
-        <input type="text" id="CourseName" /><br />
-
-        <label for="CourseTime">Carga horária (em horas):</label>
-        <input type="number" id="CourseTime" /><br />
-
-        <label for="CourseInstructor">Nome do instrutor:</label>
-        <input type="text" id="CourseInstructor" /><br />
+  <body>
+    <header>
+      <h1>Página CRUDL</h1>
+      <div class="headerMenu">
+        <button id="lightTheme">Tema claro</button>
+        <button id="darkTheme" class="darkButton">Tema escuro</button>
       </div>
+    </header>
 
-      <div id="CourseTeaching" class="brightRedSection">
-        <div class="label">Nível de educação do curso:</div>
-        <div class="label">
-          <input type="radio" id="Tecnologo" name="education" />Tecnólogo
+    <form onsubmit="addCourse()" class="container" id="addCourseForm">
+      <div class="darkRedSection">
+        <div class="brightRedSection">
+          <label for="CourseName">Nome do curso:</label>
+          <input type="text" id="CourseName" /><br />
+
+          <label for="CourseTime">Carga horária (em horas):</label>
+          <input type="number" id="CourseTime" /><br />
+
+          <label for="CourseInstructor">Nome do instrutor:</label>
+          <input type="text" id="CourseInstructor" /><br />
         </div>
-        <br />
-        <div class="label">
-          <input type="radio" id="Profissionalizante" name="education" />Profissionalizante
+
+        <div id="CourseTeaching" class="brightRedSection">
+          <div class="label">Nível de educação do curso:</div>
+          <div class="label">
+            <input type="radio" id="Tecnologo" name="education" />Tecnólogo
+          </div>
+          <br />
+          <div class="label">
+            <input
+              type="radio"
+              id="Profissionalizante"
+              name="education"
+            />Profissionalizante
+          </div>
+          <br />
+          <div class="label">
+            <input type="radio" id="EnsinoSuperior" name="education" />Ensino
+            superior
+          </div>
+          <br />
         </div>
-        <br />
-        <div class="label">
-          <input type="radio" id="EnsinoSuperior" name="education" />Ensino
-          superior
-        </div>
-        <br />
+
+        <button type="submit">Adicionar</button>
       </div>
+    </form>
 
-      <button type="submit">Adicionar</button>
+    <div id="courseList" class="brightRedSection">
+      <div class="label">Cursos:</div>
+      <table id="courseTable" class="courseTable">
+        <tr>
+          <th>Id</th>
+          <th>Curso</th>
+          <th>Carga horária</th>
+          <th>Instrutor</th>
+          <th>Nível de educação</th>
+          <th>Opções</th>
+        </tr>
+      </table>
     </div>
-  </form>
-
-  <div id="list" class="brightRedSection">
-    <div class="label">Cursos:</div>
-  </div>
-  
-</body>
-
+  </body>
 </html>
