@@ -121,6 +121,8 @@ function addCourse() {
   localStorage.setItem("courseTime" + courseCount, time);
   localStorage.setItem("courseInstructor" + courseCount, instructor);
   localStorage.setItem("courseEducation" + courseCount, education);
+
+  window.alert("Curso criado com sucesso!");
 }
 
 // function getLastSessionTheme() {
