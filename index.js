@@ -16,14 +16,9 @@ class Course{
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  document
-    .getElementById("lightTheme")
-    .addEventListener("click", switchLightTheme);
-  document
-    .getElementById("darkTheme")
-    .addEventListener("click", switchDarkTheme);
+  document.getElementById("lightTheme").addEventListener("click", toggleTheme);
+  document.getElementById("darkTheme").addEventListener("click", toggleTheme);
   getCourses();
-  getLastSessionTheme();
 });
 
 function redirectToHomePage() {
@@ -173,7 +168,3 @@ window.onload = function () {
     document.body.classList.add(theme);
   }
 };
-
-
-document.getElementById("lightTheme").addEventListener("click", toggleTheme);
-document.getElementById("darkTheme").addEventListener("click", toggleTheme);
