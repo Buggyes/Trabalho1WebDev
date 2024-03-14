@@ -1,80 +1,292 @@
-html {
-    font-family: Consolas;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-button {
-    font-family: Consolas;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 header {
-    border-radius: 5px;
-    display: grid;
-    background-color: rgb(255, 80, 80);
-    text-decoration: none;
-    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+button#homeButton {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button#homeButton:hover {
+    text-decoration: underline;
+}
+
+nav button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+form {
     margin-bottom: 20px;
 }
 
-p{
-    margin: 0px;
-    padding: 0px;
+label {
+    display: block;
+    margin-bottom: 5px;
 }
 
-div {
-    margin: 0px;
-    padding: 0px;
-}
-
-.darkButton {
-    background-color: rgb(30, 30, 30);
-    color: white;
-}
-
-.darkTheme {
-    background-color: rgb(30, 30, 30);
-}
-
-.darkTheme label {
-    color: white;
-}
-
-.lightTheme {
-    background-color: rgb(255, 255, 255);
-}
-
-.lightTheme label {
-    color: black;
-}
-
-.container {
-    margin: auto;
-}
-
-.headerMenu {
-    justify-self: end;
-}
-
-.brightRedSection {
-    background-color: rgb(255, 80, 80);
+input[type="text"],
+input[type="number"] {
+    width: 100%;
     padding: 5px;
-    margin: 5px;
-    width: fit-content;
-    border-radius: 2px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#userIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
 }
 
 .darkRedSection {
-    background-color: rgb(130, 10, 10);
-    padding: 5px;
-    margin: 5px;
-    width: fit-content;
-    border-radius: 2px;
+    background-color: #900;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 15px;
 }
 
-.brightRedSection label {
-    color: black;
+.brightRedSection {
+    background-color: #f00;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 15px;
 }
 
-.courseTable, tr, th, td{
-    border: 4px solid rgb(130, 10, 10);
+button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+.courseTable {
+    width: 100%;
     border-collapse: collapse;
+}
+
+.courseTable th,
+.courseTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    color: #333;
+}
+
+.courseTable th {
+    background-color: #f2f2f2;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilos para os botões e links */
+a,
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+a:hover,
+button:hover {
+    background-color: #555;
+}
+
+a[href="#addCourseForm"],
+a[href="#courseList"],
+a[href="#footer"] {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Estilos para os botões de tema */
+button#lightTheme {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+button#darkTheme {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Estilos para o tema claro */
+.lightTheme header {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.lightTheme nav button {
+    color: #333;
+}
+
+.lightTheme button#lightTheme {
+    display: none;
+}
+
+.lightTheme button#darkTheme {
+    display: inline-block;
+}
+
+.lightTheme main {
+    background-color: #fff;
+}
+
+.lightTheme .darkRedSection {
+    background-color: #ffcccc;
+    color: #333;
+}
+
+.lightTheme .brightRedSection {
+    background-color: #ff6666;
+    color: #333;
+}
+
+.lightTheme footer {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Estilos para o tema escuro */
+.darkTheme header {
+    background-color: #333;
+    color: #fff;
+}
+
+.darkTheme nav button {
+    color: #fff;
+}
+
+.darkTheme button#lightTheme {
+    display: inline-block;
+}
+
+.darkTheme button#darkTheme {
+    display: none;
+}
+
+.darkTheme main {
+    background-color: #222;
+}
+
+.darkTheme .darkRedSection {
+    background-color: #900;
+    color: #fff;
+}
+
+.darkTheme .brightRedSection {
+    background-color: #f00;
+    color: #fff;
+}
+
+.darkTheme footer {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Media queries para tornar o layout responsivo */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    button#homeButton {
+        font-size: 1.2em;
+    }
+
+    nav button {
+        padding: 3px 8px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    form {
+        margin-bottom: 10px;
+    }
+
+    label {
+        margin-bottom: 3px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 3px;
+        margin-bottom: 5px;
+    }
+
+    .darkRedSection,
+    .brightRedSection {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+        padding: 8px 16px;
+    }
+
+    .courseTable th,
+    .courseTable td {
+        padding: 6px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    #userIcon {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
 }

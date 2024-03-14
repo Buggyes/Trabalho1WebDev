@@ -1,60 +1,73 @@
 <!DOCTYPE html>
 <html lang="en" id="site" class="darkTheme">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tela de Início</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="index.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Início</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
 
-  <body>
-    <header>
-      <h1>Página CRUDL</h1>
-      <div class="headerMenu">
-        <button id="lightTheme">Tema claro</button>
-        <button id="darkTheme" class="darkButton">Tema escuro</button>
-      </div>
-    </header>
+</head>
+<body>
+  <header>
+    <button id="homeButton">Página CRUDL</button>
+    <nav>
+      <img src="https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur.png" alt="Ícone de usuário" id="userIcon">
 
+      <a href="#addCourseForm">Cadastro de Cursos</a>
+      <a href="#courseList">Lista de Cursos</a>
+      <a href="#footer">Rodapé</a>
+      <button id="lightTheme">Tema claro</button>
+      <button id="darkTheme" class="darkButton">Tema escuro</button>
+    </nav>
+  </header>
+
+  <main>
     <form onsubmit="addCourse()" class="container" id="addCourseForm">
-      <div class="darkRedSection">
-        <div class="brightRedSection">
+      <section class="darkRedSection">
+        <section class="brightRedSection">
           <label for="CourseName">Nome do curso:</label>
-          <input type="text" id="CourseName" /><br />
+          <input type="text" id="CourseName"><br>
 
           <label for="CourseTime">Carga horária (em horas):</label>
-          <input type="number" id="CourseTime" /><br />
+          <input type="number" id="CourseTime"><br>
 
           <label for="CourseInstructor">Nome do instrutor:</label>
-          <input type="text" id="CourseInstructor" /><br />
-        </div>
+          <input type="text" id="CourseInstructor"><br>
+        </section>
 
-        <div id="CourseTeaching" class="brightRedSection">
+        <section id="CourseTeaching" class="brightRedSection">
           <p>Nível de educação do curso:</p>
-          <input type="radio" id="Tecnologo" name="education" />Tecnólogo
-          <br/>
-          <input type="radio" id="Profissionalizante" name="education"/>Profissionalizante
-          <br/>
-          <input type="radio" id="EnsinoSuperior" name="education" />Ensino superior
-          <br/>
-        </div>
+          <input type="radio" id="Tecnologo" name="education">Tecnólogo<br>
+          <input type="radio" id="Profissionalizante" name="education">Profissionalizante<br>
+          <input type="radio" id="EnsinoSuperior" name="education">Ensino superior<br>
+        </section>
 
         <button type="submit">Adicionar</button>
-      </div>
+      </section>
     </form>
 
-    <div id="courseList" class="brightRedSection">
+    <section id="courseList" class="brightRedSection">
       <p>Cursos:</p>
       <table id="courseTable" class="courseTable">
-        <tr>
-          <th>Curso</th>
-          <th>Carga horária</th>
-          <th>Instrutor</th>
-          <th>Nível de educação</th>
-          <th>Opções</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Curso</th>
+            <th>Carga horária</th>
+            <th>Instrutor</th>
+            <th>Nível de educação</th>
+            <th>Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
       </table>
-    </div>
-  </body>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p>Jaqueline Klegin, Matheus Eduardo dos Santos, João Vinícius Rosá</p>
+  </footer>
+</body>
 </html>

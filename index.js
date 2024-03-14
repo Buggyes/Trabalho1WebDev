@@ -26,6 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
   getLastSessionTheme();
 });
 
+function redirectToHomePage() {
+    window.location.href = "index.html";
+}
+
 function getCourses() {
   let table = document.getElementById("courseTable");
   courseCount = Number(localStorage.getItem("courseCount"));
@@ -124,22 +128,52 @@ function addCourse() {
   localStorage.setItem("courseEducation" + courseCount, education);
 }
 
-function getLastSessionTheme() {
-  let currentTheme = localStorage.getItem("siteTheme");
-  if (currentTheme == 1) {
-    switchLightTheme();
-  }
-  else {
-    switchDarkTheme();
+// function getLastSessionTheme() {
+//   let currentTheme = localStorage.getItem("siteTheme");
+//   if (currentTheme == 1) {
+//     switchLightTheme();
+//   }
+//   else {
+//     switchDarkTheme();
+//   }
+// }
+
+// function switchLightTheme() {
+//   document.getElementById("site").className = "lightTheme";
+//   localStorage.setItem("siteTheme", 1);
+// }
+
+// function switchDarkTheme() {
+//   document.getElementById("site").className = "darkTheme";
+//   localStorage.setItem("siteTheme", 0);
+// }
+
+function toggleTheme() {
+  const body = document.body;
+  const lightTheme = "lightTheme";
+  const darkTheme = "darkTheme";
+
+  if (body.classList.contains(lightTheme)) {
+    body.classList.remove(lightTheme);
+    body.classList.add(darkTheme);
+
+    localStorage.setItem("theme", darkTheme);
+  } else {
+    body.classList.remove(darkTheme);
+    body.classList.add(lightTheme);
+
+    localStorage.setItem("theme", lightTheme);
   }
 }
 
-function switchLightTheme() {
-  document.getElementById("site").className = "lightTheme";
-  localStorage.setItem("siteTheme", 1);
-}
 
-function switchDarkTheme() {
-  document.getElementById("site").className = "darkTheme";
-  localStorage.setItem("siteTheme", 0);
-}
+window.onload = function () {
+  const theme = localStorage.getItem("theme");
+  if (theme) {
+    document.body.classList.add(theme);
+  }
+};
+
+
+document.getElementById("lightTheme").addEventListener("click", toggleTheme);
+document.getElementById("darkTheme").addEventListener("click", toggleTheme);
