@@ -11,15 +11,15 @@
   <body>
     <header>
       <h1>Página CRUDL</h1>
-      <div class="headerMenu">
+      <section class="headerMenu">
         <button id="lightTheme">Tema claro</button>
         <button id="darkTheme" class="darkButton">Tema escuro</button>
-      </div>
+      </section>
     </header>
 
     <form onsubmit="addCourse()" class="container" id="addCourseForm">
-      <div class="darkRedSection">
-        <div class="brightRedSection">
+      <section class="darkRedSection">
+        <section class="brightRedSection">
           <label for="CourseName">Nome do curso:</label>
           <input type="text" id="CourseName" /><br />
 
@@ -28,8 +28,9 @@
 
           <label for="CourseInstructor">Nome do instrutor:</label>
           <input type="text" id="CourseInstructor" /><br />
-        </div>
+        </section>
 
+<<<<<<< HEAD
         <div id="CourseTeaching" class="brightRedSection">
           <p>Nível de educação do curso:</p>
           <input type="radio" id="Tecnologo" name="education" />Tecnólogo
@@ -39,13 +40,40 @@
           <input type="radio" id="EnsinoSuperior" name="education" />Ensino superior
           <br/>
         </div>
+=======
+        <section id="CourseTeaching" class="brightRedSection">
+          <article class="label">Nível de educação do curso:</article>
+          <article class="label">
+            <input type="radio" id="Tecnologo" name="education" />Tecnólogo
+          </article>
+          <br />
+          <article class="label">
+            <input
+              type="radio"
+              id="Profissionalizante"
+              name="education"
+            />Profissionalizante
+          </article>
+          <br />
+          <article class="label">
+            <input type="radio" id="EnsinoSuperior" name="education" />Ensino
+            superior
+          </article>
+          <br />
+        </section>
+>>>>>>> 063adb28bb127a75ad12f6a070a4a25df0f09001
 
         <button type="submit">Adicionar</button>
-      </div>
+      </section>
     </form>
 
+<<<<<<< HEAD
     <div id="courseList" class="brightRedSection">
       <p>Cursos:</p>
+=======
+    <section id="courseList" class="brightRedSection">
+      <article class="label">Cursos:</article>
+>>>>>>> 063adb28bb127a75ad12f6a070a4a25df0f09001
       <table id="courseTable" class="courseTable">
         <tr>
           <th>Curso</th>
@@ -55,6 +83,10 @@
           <th>Opções</th>
         </tr>
       </table>
-    </div>
+    </section>
+    
+    <footer id="rodape">
+
+    </footer>
   </body>
 </html>
