@@ -27,20 +27,20 @@
       <section class="darkRedSection">
         <section class="brightRedSection">
           <label for="CourseName">Nome do curso:</label>
-          <input type="text" id="CourseName"><br>
+          <input type="text" id="CourseName" required><br>
 
           <label for="CourseTime">Carga horária (em horas):</label>
-          <input type="number" id="CourseTime"><br>
+          <input type="number" id="CourseTime" required><br>
 
           <label for="CourseInstructor">Nome do instrutor:</label>
-          <input type="text" id="CourseInstructor"><br>
+          <input type="text" id="CourseInstructor" required><br>
         </section>
 
         <section id="CourseTeaching" class="brightRedSection">
           <p>Nível de educação do curso:</p>
-          <input type="radio" id="Tecnologo" name="education">Tecnólogo<br>
-          <input type="radio" id="Profissionalizante" name="education">Profissionalizante<br>
-          <input type="radio" id="EnsinoSuperior" name="education">Ensino superior<br>
+          <input type="radio" id="Tecnologo" name="education" required>Tecnólogo<br>
+          <input type="radio" id="Profissionalizante" name="education" required>Profissionalizante<br>
+          <input type="radio" id="EnsinoSuperior" name="education" required>Ensino superior<br>
         </section>
 
         <button type="submit">Adicionar</button>
