@@ -1,7 +1,15 @@
-html{
+    html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    }
+
+    .darkTheme{
+        background-color: #222;
+    }
+
+    .lightTheme{
+        background-color: #f2f2f2;
     }
     
     /* Estilos gerais */
@@ -82,7 +90,8 @@ html{
     }
     
     .courseTable th {
-      background-color: #f2f2f2;
+      background-color: #333;
+      color: #fff;
     }
     
     footer {
