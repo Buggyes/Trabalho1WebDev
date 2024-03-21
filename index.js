@@ -1,12 +1,12 @@
 var courseCount = 0;
 
-class Course{
+class Course {
   id;
   name;
   time;
   instructor;
   education;
-  Course(id, name, time, instructor, education){
+  Course(id, name, time, instructor, education) {
     this.id = id;
     this.name = name;
     this.time = time;
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function redirectToHomePage() {
-    window.location.href = "index.html";
+  window.location.href = "index.html";
 }
 
 function getCourses() {
@@ -30,7 +30,7 @@ function getCourses() {
   courseCount = Number(localStorage.getItem("courseCount"));
   for (let i = 1; i <= courseCount; i++) {
 
-    if(localStorage.getItem("courseName"+i) == null){
+    if (localStorage.getItem("courseName" + i) == null) {
       continue;
     }
 
@@ -40,28 +40,30 @@ function getCourses() {
     console.log(localStorage.getItem("courseInstructor" + i));
     console.log(localStorage.getItem("courseEducation" + i));
 
+    let editing = false;
+
     tray = document.createElement("tr");
     tray.id = i;
-    
+
     let courseName = document.createElement("td");
-    courseName.id = "courseName"+i;
+    courseName.id = "courseName" + i;
     let courseNameText = document.createTextNode(localStorage.getItem("courseName" + i));
-    courseNameText.id = "courseNameText"+i;
+    courseNameText.id = "courseNameText" + i;
 
     let courseTime = document.createElement("td");
-    courseTime.id = "courseTime"+i;
+    courseTime.id = "courseTime" + i;
     let courseTimeText = document.createTextNode(localStorage.getItem("courseTime" + i));
-    courseTimeText.id = "courseTimeText"+i;
+    courseTimeText.id = "courseTimeText" + i;
 
     let courseInstructor = document.createElement("td");
-    courseInstructor.id = "courseInstructor"+i;
+    courseInstructor.id = "courseInstructor" + i;
     let courseInstructorText = document.createTextNode(localStorage.getItem("courseInstructor" + i));
-    courseInstructorText.id = "courseInstructorText"+i;
+    courseInstructorText.id = "courseInstructorText" + i;
 
     let courseEducation = document.createElement("td");
-    courseEducation.id = "courseEducation"+i;
+    courseEducation.id = "courseEducation" + i;
     let courseEducationText = document.createTextNode(localStorage.getItem("courseEducation" + i));
-    courseEducationText.id = "courseEducationText"+i;
+    courseEducationText.id = "courseEducationText" + i;
 
     let courseOptions = document.createElement("td");
     let courseEdit = document.createElement("button");
@@ -70,46 +72,73 @@ function getCourses() {
     let courseDeleteText = document.createTextNode("Deletar");
 
     courseEdit.addEventListener('click', () => {
-      let editTray = document.getElementById(i);
+      if (editing == false) {
+        editing = true;
+        let editTray = document.getElementById(i);
 
-      let nameInput = document.createElement("input");
-      nameInput.setAttribute("type","text");
-      nameInput.value = localStorage.getItem("courseName" + i);
-      editTray.cells[0].appendChild(nameInput);
+        let nameInput = document.createElement("input");
+        nameInput.setAttribute("type", "text");
+        nameInput.value = localStorage.getItem("courseName" + i);
+        nameInput.id = "nameInput"+i;
+        editTray.cells[0].appendChild(nameInput);
 
-      let timeInput = document.createElement("input");
-      timeInput.setAttribute("type","number");
-      timeInput.value = localStorage.getItem("courseTime" + i);
-      editTray.cells[1].appendChild(timeInput);
+        let timeInput = document.createElement("input");
+        timeInput.setAttribute("type", "number");
+        timeInput.id = "timeInput"+i;
+        timeInput.value = localStorage.getItem("courseTime" + i);
+        editTray.cells[1].appendChild(timeInput);
 
-      let instrInput = document.createElement("input");
-      instrInput.setAttribute("type","text");
-      instrInput.value = localStorage.getItem("courseInstructor" + i);
-      editTray.cells[2].appendChild(instrInput);
+        let instrInput = document.createElement("input");
+        instrInput.setAttribute("type", "text");
+        instrInput.id = "instrInput"+i;
+        instrInput.value = localStorage.getItem("courseInstructor" + i);
+        editTray.cells[2].appendChild(instrInput);
 
-      let educInput = document.createElement("select");
+        let educInput = document.createElement("select");
+        educInput.id = "educInput"+i;
 
-      let tecInput = document.createElement("option");
-      tecInput.setAttribute("value","Tecnologo");
-      tecInput.text = "Tecnologo";
-      educInput.appendChild(tecInput);
+        let tecInput = document.createElement("option");
+        tecInput.setAttribute("value", "Tecnologo");
+        tecInput.text = "Tecnologo";
+        educInput.appendChild(tecInput);
 
-      let profInput = document.createElement("option");
-      profInput.setAttribute("value","Profissionalizante");
-      profInput.text = "Profissionalizante";
-      educInput.appendChild(profInput);
+        let profInput = document.createElement("option");
+        profInput.setAttribute("value", "Profissionalizante");
+        profInput.text = "Profissionalizante";
+        educInput.appendChild(profInput);
 
-      let supInput = document.createElement("option");
-      supInput.setAttribute("value","EnsinoSuperior");
-      supInput.text = "Ensino superior";
-      educInput.appendChild(supInput);
+        let supInput = document.createElement("option");
+        supInput.setAttribute("value", "EnsinoSuperior");
+        supInput.text = "Ensino superior";
+        educInput.appendChild(supInput);
 
-      editTray.cells[3].appendChild(educInput);
+        editTray.cells[3].appendChild(educInput);
 
-      courseNameText.remove();
-      courseTimeText.remove();
-      courseInstructorText.remove();
-      courseEducationText.remove();
+        courseNameText.remove();
+        courseTimeText.remove();
+        courseInstructorText.remove();
+        courseEducationText.remove();
+      }
+      else{
+        editing = false;
+
+        let nameInput = document.getElementById("nameInput"+i);
+        let timeInput = document.getElementById("timeInput"+i);
+        let instrInput = document.getElementById("instrInput"+i);
+        let educInput = document.getElementById("educInput"+i);
+
+        let newName = nameInput.value;
+        let newTime = timeInput.value;
+        let newInstr = instrInput.value;
+        let newEduc = educInput.options[educInput.selectedIndex].text;
+
+        localStorage.setItem("courseName"+i, newName);
+        localStorage.setItem("courseTime"+i, newTime);
+        localStorage.setItem("courseInstructor"+i, newInstr);
+        localStorage.setItem("courseEducation"+i, newEduc);
+
+        window.location.reload();
+      }
     });
 
     courseDelete.addEventListener('click', () => {
