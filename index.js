@@ -18,6 +18,7 @@ class Course {
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("lightTheme").addEventListener("click", toggleTheme);
   document.getElementById("darkTheme").addEventListener("click", toggleTheme);
+  document.getElementById("homeButton").addEventListener("click", redirectToHomePage);
   getCourses();
 });
 
