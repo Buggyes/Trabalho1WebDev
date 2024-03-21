@@ -1,20 +1,5 @@
 var courseCount = 0;
 
-class Course {
-  id;
-  name;
-  time;
-  instructor;
-  education;
-  Course(id, name, time, instructor, education) {
-    this.id = id;
-    this.name = name;
-    this.time = time;
-    this.instructor = instructor;
-    this.education = education;
-  }
-}
-
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("lightTheme").addEventListener("click", toggleTheme);
   document.getElementById("darkTheme").addEventListener("click", toggleTheme);
@@ -80,23 +65,23 @@ function getCourses() {
         let nameInput = document.createElement("input");
         nameInput.setAttribute("type", "text");
         nameInput.value = localStorage.getItem("courseName" + i);
-        nameInput.id = "nameInput"+i;
+        nameInput.id = "nameInput" + i;
         editTray.cells[0].appendChild(nameInput);
 
         let timeInput = document.createElement("input");
         timeInput.setAttribute("type", "number");
-        timeInput.id = "timeInput"+i;
+        timeInput.id = "timeInput" + i;
         timeInput.value = localStorage.getItem("courseTime" + i);
         editTray.cells[1].appendChild(timeInput);
 
         let instrInput = document.createElement("input");
         instrInput.setAttribute("type", "text");
-        instrInput.id = "instrInput"+i;
+        instrInput.id = "instrInput" + i;
         instrInput.value = localStorage.getItem("courseInstructor" + i);
         editTray.cells[2].appendChild(instrInput);
 
         let educInput = document.createElement("select");
-        educInput.id = "educInput"+i;
+        educInput.id = "educInput" + i;
 
         let tecInput = document.createElement("option");
         tecInput.setAttribute("value", "Tecnologo");
@@ -120,23 +105,23 @@ function getCourses() {
         courseInstructorText.remove();
         courseEducationText.remove();
       }
-      else{
+      else {
         editing = false;
 
-        let nameInput = document.getElementById("nameInput"+i);
-        let timeInput = document.getElementById("timeInput"+i);
-        let instrInput = document.getElementById("instrInput"+i);
-        let educInput = document.getElementById("educInput"+i);
+        let nameInput = document.getElementById("nameInput" + i);
+        let timeInput = document.getElementById("timeInput" + i);
+        let instrInput = document.getElementById("instrInput" + i);
+        let educInput = document.getElementById("educInput" + i);
 
         let newName = nameInput.value;
         let newTime = timeInput.value;
         let newInstr = instrInput.value;
         let newEduc = educInput.options[educInput.selectedIndex].text;
 
-        localStorage.setItem("courseName"+i, newName);
-        localStorage.setItem("courseTime"+i, newTime);
-        localStorage.setItem("courseInstructor"+i, newInstr);
-        localStorage.setItem("courseEducation"+i, newEduc);
+        localStorage.setItem("courseName" + i, newName);
+        localStorage.setItem("courseTime" + i, newTime);
+        localStorage.setItem("courseInstructor" + i, newInstr);
+        localStorage.setItem("courseEducation" + i, newEduc);
 
         window.location.reload();
       }
@@ -194,16 +179,21 @@ function addCourse() {
     education = "Ensino Superior";
   }
 
-  courseCount++;
+  if (time <= 0) {
+    window.alert("Insira um número de horas válido.");
+  }
+  else {
+    courseCount++;
 
-  localStorage.setItem("courseCount", courseCount);
+    localStorage.setItem("courseCount", courseCount);
 
-  localStorage.setItem("courseName" + courseCount, name);
-  localStorage.setItem("courseTime" + courseCount, time);
-  localStorage.setItem("courseInstructor" + courseCount, instructor);
-  localStorage.setItem("courseEducation" + courseCount, education);
+    localStorage.setItem("courseName" + courseCount, name);
+    localStorage.setItem("courseTime" + courseCount, time);
+    localStorage.setItem("courseInstructor" + courseCount, instructor);
+    localStorage.setItem("courseEducation" + courseCount, education);
 
-  window.alert("Curso criado com sucesso!");
+    window.alert("Curso criado com sucesso!");
+  }
 }
 
 // function getLastSessionTheme() {
