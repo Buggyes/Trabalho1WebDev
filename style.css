@@ -102,13 +102,21 @@ button[type="submit"]:hover {
     border-collapse: collapse;
 }
 
-.courseTable th,
-.courseTable td {
-    border: 1px solid #ddd;
+.courseTable th{
+    background-color: #fff;
+    border: 2px solid #111;
     padding: 8px;
     text-align: left;
-    color: #333;
+    color: #222;
 }
+.courseTable td {
+    background-color: #222;
+    border: 2px solid #111;
+    padding: 8px;
+    text-align: left;
+    color: #fff;
+}
+
 
 .courseTable th {
     background-color: #f2f2f2;
