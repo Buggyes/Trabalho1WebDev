@@ -1,4 +1,5 @@
 function validateLogin() {
+<<<<<<< Updated upstream
     // Perform login validation here
     // If login is successful, redirect to index.html
     window.location.replace("index.html");
@@ -10,3 +11,8 @@ function validateLogin() {
     event.preventDefault();
     validateLogin();
   });
+=======
+
+    window.location.href = "index.html";
+  }
+>>>>>>> Stashed changes
