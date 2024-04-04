@@ -4,8 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("lightTheme").addEventListener("click", toggleTheme);
   document.getElementById("darkTheme").addEventListener("click", toggleTheme);
   document.getElementById("homeButton").addEventListener("click", redirectToHomePage);
+  document.getElementById("userIcon").addEventListener("click", redirectToLoginPage);
   getCourses();
 });
+
+function redirectToLoginPage() {
+  window.location.href = "login.html"; 
+}
 
 function redirectToHomePage() {
   window.location.href = "index.html";
@@ -233,7 +238,6 @@ function toggleTheme() {
     localStorage.setItem("theme", lightTheme);
   }
 }
-
 
 window.onload = function () {
   const theme = localStorage.getItem("theme");
