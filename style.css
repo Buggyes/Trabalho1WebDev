@@ -27,6 +27,11 @@ button#homeButton {
     border-radius: 10px;
 }
 
+.siteLogo{
+    height: 60px;
+    width: 60px;
+}
+
 button#homeButton:hover {
     text-decoration: underline;
 }
