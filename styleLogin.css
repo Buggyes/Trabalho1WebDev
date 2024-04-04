@@ -1,0 +1,112 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background-color: #f2f2f2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: 20px;
+	overflow: hidden;
+}
+
+.home {
+	position: relative;
+	width: 350px;
+	height: 450px;
+	background: #fff;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+	border-radius: 10px;
+}
+
+.home .form_container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.home .form_container h1 {
+	font-size: 28px;
+	font-weight: 600;
+	text-align: center;
+	line-height: 60px;
+	color: #333;
+}
+
+.home .form_container .input_box {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	margin-top: 30px;
+}
+
+.home .form_container .input_box input {
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding-left: 40px;
+	font-size: 16px;
+	box-sizing: border-box;
+}
+
+.home .form_container .input_box .email,
+.home .form_container .input_box .password {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 10px;
+	font-size: 20px;
+	color: #adadad;
+	transition: 0.5s;
+}
+
+.home .form_container .input_box input:valid ~ .email,
+.home .form_container .input_box input:valid ~ .password {
+	color: #666;
+}
+
+.home .form_container button {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background: #1d2430;
+	color: #fff;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 40px;
+	font-size: 18px;
+}
+
+.home .form_container button:hover {
+	background: #1a1e27;
+}
+
+.home .forgot_pass {
+	position: relative;
+	margin-top: 20px;
+	font-size: 15px;
+	color: #333;
+	text-align: center;
+	cursor: pointer;
+}
+
+.home .signup {
+	position: relative;
+	margin-top: 20px;
+	font-size: 15px;
+	color: #333;
+	text-align: center;
+	cursor: pointer;
+}.home .signup a {
+	color: #1d2430;
+	text-decoration: none;
+}
